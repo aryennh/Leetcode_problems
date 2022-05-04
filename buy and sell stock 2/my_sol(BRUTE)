@@ -1,0 +1,21 @@
+ def maxProfit(self, prices: List[int]) -> int:
+        
+        if prices == sorted(prices):
+            return prices[len(prices)-1] - prices[0]
+       
+        #MY BRTUE FORCE SOLN
+        min_so_far = prices[0]
+        profit = 0 #STORES TOTAL PROFT
+        profit_so_far = 0 #STORES ONE SALE
+        for i in range(1,len(prices)):
+            if prices[i] < min_so_far:
+                min_so_far = prices[i]
+            if profit_so_far < prices[i] - min_so_far : 
+                profit_so_far += prices[i] - min_so_far
+                profit+= profit_so_far
+                profit_so_far = 0
+                min_so_far = prices[i]
+            print(profit_so_far,profit)
+            print(min_so_far)
+            
+       
