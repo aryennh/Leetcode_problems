@@ -1,0 +1,25 @@
+ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        
+        newNode = ListNode(0)
+        #RECURSIVE APPROACH
+        
+        def merge(newList,l1,l2):
+            if not l1 and not l2:
+                return
+            if l1 and not l2 :
+                return l1
+            if not l1 and l2:
+                return l2
+            
+            if l1.val < l2.val : 
+                newNode = l1
+                newNode.next = merge(newNode,l1.next,l2)
+            else:
+                newNode = l2
+                newNode.next = merge(newNode,l2.next,l1)
+            
+            return newNode
+    
+        return merge(newNode,list1,list2)
+            
+            
