@@ -1,0 +1,43 @@
+ def isAnagram(self, s: str, t: str) -> bool:
+        #anagram is basically a permutation of the same length
+        #input all the values in a dictionary
+        #compare two dictionaries 
+        #if equal true else false
+        #or if the two sorted strings are equal
+        
+        
+        
+        #sSORTEED STRINGS SOLUTION O(nlogn)
+        '''
+        s = "".join(sorted(s))
+        t = "".join(sorted(t))
+        
+        if len(s) != len(t):
+            return False
+        
+        i=0
+        flag=False
+        if s == t : 
+            return True
+        return False
+        '''
+    
+        #dDICTINOAERY SOLUTION  O(logn) 
+        
+        from collections import OrderedDict 
+        
+        ds = {}
+        for i in range(len(s)):
+            if s[i] not in ds :
+                ds[s[i]] = 1
+            else:
+                ds[s[i]] +=1
+        dt = {}
+        for i in range(len(t)):
+            if t[i] not in dt :
+                dt[t[i]] = 1
+            else:
+                dt[t[i]] +=1
+        if dt == ds:
+            return True
+        return False
