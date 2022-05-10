@@ -1,0 +1,58 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    
+    def insert_end(self,head,item):
+        temp = ListNode(item,None)
+        if head == None :
+            return temp
+        current= head
+        while current.next !=None :
+            current = current.next
+        current.next = temp
+        return head
+
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        
+        #MERGE SORT TYPE SOLUTION---->
+        
+        p1 = list1
+        p2 = list2
+        head = ListNode(None,None)
+        #edge cae
+        '''
+        if p1 ==None and p2 ==None :
+            return None
+        elif p1 ==None and p2!=None:
+            return p2
+        elif p1!=None and p2==None: 
+            return p1
+       '''
+        while p1!=None and p2!=None :
+            print(type(p1),type(p2))
+            if p1.val < p2.val : 
+                head =self.insert_end(head,p1.val)
+                p1 = p1.next
+            elif p2.val < p1.val : 
+                head = self.insert_end(head,p2.val)
+                p2 = p2.next
+            else : 
+                head= self.insert_end(head,p1.val)
+                p1 = p1.next
+                head= self.insert_end(head,p2.val)
+                p2 = p2.next
+                
+        
+        #offloading p1
+        while p1!=None : 
+            head= self.insert_end(head,p1.val)
+            p1 = p1.next
+        
+        while p2 != None : 
+            head= self.insert_end(head,p2.val)
+            p2 = p2.next
+        
+        return head.next
