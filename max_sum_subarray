@@ -1,0 +1,10 @@
+ 
+        #O(n^2) solution 
+        sum_so_far = 0
+        cont_sum = nums[0]
+        for i in range(len(nums)):
+            sum_so_far = nums[i] + max(sum_so_far,0)
+            cont_sum= max(sum_so_far,cont_sum)
+        return cont_sum
+                
+        
