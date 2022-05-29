@@ -1,0 +1,15 @@
+  def inorder(self,root):
+        if not root:
+            return []
+        return self.inorder(root.left) + [root.val] + self.inorder(root.right)
+    
+    def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        res = self.inorder(root)
+        hmap = {}
+        for i in range(len(res)):
+            if res[i] not in hmap :
+                hmap[k-res[i]] = res[i]
+            else:
+                return True
+        return False
+            
