@@ -1,0 +1,15 @@
+lass Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        count = 0
+        current = head
+        while current :
+            current = current.next
+            count+=1
+        #Mid is at count//2
+        current = head
+        mid = count//2
+        while mid>0:
+            current = current.next
+            mid-=1
+        print(current.val)
+        return current
