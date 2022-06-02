@@ -1,0 +1,14 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        #without constant space solution
+        """hmap = {}
+        for i in range(len(nums)):
+            if nums[i] not in hmap:
+                hmap[nums[i]] = 1
+            else:
+                hmap[nums[i]] +=1
+        for x in hmap:
+            if hmap[x] == 1:
+                return x"""
