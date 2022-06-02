@@ -1,0 +1,7 @@
+#XOR of any two numbers is 0
+        #XOR of any number and 0 is the number itself
+        x = nums[0]
+        for num in nums[1:]:
+            x^=num
+        return x
+            
