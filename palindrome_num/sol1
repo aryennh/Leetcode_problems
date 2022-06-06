@@ -1,0 +1,11 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        """
+        stack = []
+        for i in str(x):
+            stack.append(i)
+        y = "".join(reversed(stack))
+        print(x)
+        print(y)
+        return str(x)==y
+        """
