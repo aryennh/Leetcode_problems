@@ -1,0 +1,25 @@
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        #apparently list comprhension sucks w time so
+        #x = [i for i in range(len(nums)+1) if i not in nums]
+        #return x[0]
+        
+        #HMAP solution sucks w space, not so much w time
+        
+        #hmap = {}
+        #for i in range(len(nums)):
+         #   hmap[nums[i]] = 1
+                    
+        #for i in range(len(nums)+1):
+         #   if  i not in hmap : 
+          #      return i 
+        
+        #SORTING SOLUTION 
+        #nums = sorted(nums)
+        #if nums[0] != 0 :
+        #   return 0
+        #elif nums[len(nums)-1] != len(nums):
+        #   return len(nums)
+        #for i in range(len(nums)-1):
+        #   if nums[i+1] == nums[i] + 2 :
+        #        return nums[i] + 1
